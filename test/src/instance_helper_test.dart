@@ -16,7 +16,7 @@ void main() {
       test('returns correct value', () {
         final result = _Class().createRequiredInstance();
         const expected = "Foo('requiredPositionalParameter',"
-            "requiredNamedParameter: 'requiredNamedParameter')";
+            "requiredNamedParameter: 'requiredNamedParameter',)";
         expect(result, expected);
       });
     });

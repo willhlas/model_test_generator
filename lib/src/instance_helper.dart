@@ -13,24 +13,13 @@ mixin InstanceHelper implements HelperCore, ParameterHelper {
 
     for (final param in requiredPositionalParameters.values) {
       final typeCode = typeToCode(param.type, param.name);
-
-      if (requiredPositionalParameters.length == 1 &&
-          requiredNamedParameters.isEmpty) {
-        buffer.write('$typeCode');
-      } else {
-        buffer.write('$typeCode,');
-      }
+      buffer.write('$typeCode,');
     }
 
     for (final param in requiredNamedParameters.values) {
       final name = param.name;
       final typeCode = typeToCode(param.type, name);
-
-      if (requiredNamedParameters.length == 1) {
-        buffer.write('$name: $typeCode');
-      } else {
-        buffer.write('$name: $typeCode,');
-      }
+      buffer.write('$name: $typeCode,');
     }
 
     buffer.write(')');
@@ -55,11 +44,7 @@ mixin InstanceHelper implements HelperCore, ParameterHelper {
         modifiedFieldValue = typeCode;
       }
 
-      if (positionalParameters.length == 1 && namedParameters.isEmpty) {
-        buffer.write('$typeCode');
-      } else {
-        buffer.write('$typeCode,');
-      }
+      buffer.write('$typeCode,');
     }
 
     for (final param in namedParameters.values) {
@@ -74,11 +59,7 @@ mixin InstanceHelper implements HelperCore, ParameterHelper {
         modifiedFieldValue = typeCode;
       }
 
-      if (namedParameters.length == 1) {
-        buffer.write('$name: $typeCode');
-      } else {
-        buffer.write('$name: $typeCode,');
-      }
+      buffer.write('$name: $typeCode,');
     }
 
     buffer.write(')');
