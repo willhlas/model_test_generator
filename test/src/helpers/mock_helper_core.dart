@@ -1,5 +1,6 @@
 import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/type.dart';
+import 'package:analyzer/src/generated/source.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:model_test_generator/src/helper_core.dart';
 
@@ -7,7 +8,7 @@ import 'helpers.dart';
 
 class MockHelperCore extends Mock implements HelperCore {
   @override
-  ClassElement get element => _MockClassElement();
+  ClassElement get element => MockClassElement();
 
   @override
   ConstructorElement get constructor => _MockConstructorElement();
@@ -16,7 +17,51 @@ class MockHelperCore extends Mock implements HelperCore {
   String get className => 'Foo';
 }
 
-class _MockClassElement extends Mock implements ClassElement {}
+class MockClassElement extends Mock implements ClassElement {
+  @override
+  Source get librarySource => _MockLibrarySource();
+
+  @override
+  LibraryElement get library => _MockLibraryElement();
+
+  @override
+  String get name => 'Foo';
+
+  @override
+  ConstructorElement? get unnamedConstructor => _MockConstructorElement();
+
+  @override
+  List<InterfaceType> get allSupertypes => [
+        _MockInterfaceType(),
+      ];
+
+  @override
+  List<MethodElement> get methods => [
+        _MockMethodElement(),
+      ];
+}
+
+class _MockInterfaceType extends Mock implements InterfaceType {
+  @override
+  String getDisplayString({required bool withNullability}) {
+    return 'Equatable';
+  }
+}
+
+class _MockMethodElement extends Mock implements MethodElement {
+  @override
+  String get name => 'copyWith';
+}
+
+class _MockLibrarySource extends Mock implements Source {
+  @override
+  Uri get uri => Uri.parse('package:foo/foo.dart');
+}
+
+class _MockLibraryElement extends Mock implements LibraryElement {
+  @override
+  String get identifier => 'package:foo/foo.dart';
+}
 
 class _MockConstructorElement extends Mock implements ConstructorElement {
   @override

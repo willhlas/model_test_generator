@@ -26,11 +26,6 @@ abstract class HelperCore {
   @protected
   String get className => element.name;
 
-  /// Returns the [FieldElement]s for the element.
-  @protected
-  List<FieldElement> get fields =>
-      element.fields.where((e) => !e.isStatic && !e.isSynthetic).toList();
-
   /// Checks if the element uses Equatable.
   @protected
   bool get isEquatable => element.allSupertypes
