@@ -41,7 +41,6 @@ class ModelTestGenerator {
       }
     } catch (e) {
       context.logger.err(e.toString());
-      exit(1);
     }
   }
 }

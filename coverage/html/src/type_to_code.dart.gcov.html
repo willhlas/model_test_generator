@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-08-10 11:57:48</td>
+            <td class="headerValue">2023-08-11 10:11:24</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -66,15 +66,15 @@
 <a name="4"><span class="lineNum">       4 </span>            : import 'package:analyzer/dart/element/type.dart';</a>
 <a name="5"><span class="lineNum">       5 </span>            : </a>
 <a name="6"><span class="lineNum">       6 </span>            : /// Returns a value based on the type.</a>
-<a name="7"><span class="lineNum">       7 </span><span class="lineCov">          2 : dynamic typeToCode(</span></a>
+<a name="7"><span class="lineNum">       7 </span><span class="lineCov">          3 : dynamic typeToCode(</span></a>
 <a name="8"><span class="lineNum">       8 </span>            :   DartType type,</a>
 <a name="9"><span class="lineNum">       9 </span>            :   String name, {</a>
 <a name="10"><span class="lineNum">      10 </span>            :   bool useDefault = true,</a>
 <a name="11"><span class="lineNum">      11 </span>            : }) {</a>
-<a name="12"><span class="lineNum">      12 </span><span class="lineCov">          2 :   final element = type.element;</span></a>
+<a name="12"><span class="lineNum">      12 </span><span class="lineCov">          3 :   final element = type.element;</span></a>
 <a name="13"><span class="lineNum">      13 </span>            : </a>
-<a name="14"><span class="lineNum">      14 </span><span class="lineCov">          2 :   if (type.isDartCoreString) {</span></a>
-<a name="15"><span class="lineNum">      15 </span><span class="lineCov">          4 :     return useDefault ? &quot;'$name'&quot; : &quot;'${name}2'&quot;;</span></a>
+<a name="14"><span class="lineNum">      14 </span><span class="lineCov">          3 :   if (type.isDartCoreString) {</span></a>
+<a name="15"><span class="lineNum">      15 </span><span class="lineCov">          6 :     return useDefault ? &quot;'$name'&quot; : &quot;'${name}2'&quot;;</span></a>
 <a name="16"><span class="lineNum">      16 </span><span class="lineCov">          1 :   } else if (type.isDartCoreBool) {</span></a>
 <a name="17"><span class="lineNum">      17 </span>            :     return useDefault;</a>
 <a name="18"><span class="lineNum">      18 </span><span class="lineCov">          1 :   } else if (type.isDartCoreDouble) {</span></a>
