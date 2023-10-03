@@ -34,17 +34,17 @@ Edit the `mason.yaml` file and add the following configuration to include the Ma
 
 ```yaml
 bricks:
-  model_test_brick:
-    path: <path_to_brick>
+  model_test:
+    git:
+      url: https://github.com/willhlas/model_test.git
+      ref: 368b93d
 ```
-
-Replace `<path_to_brick>` with the relative path to your Mason brick.
 
 ### Step 5: Generate Tests with Mason
 Run the following command to generate tests using the Mason brick:
 
 ```bash
-mason make model_test_brick
+mason make model_test
 ```
 
 Mason will prompt you to provide the path to the file you want to test and the name of the class.
@@ -64,3 +64,5 @@ void main() {
   });
 }
 ```
+
+This package is still considered a work in progress so not all features and use cases will be covered!
